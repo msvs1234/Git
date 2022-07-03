@@ -1,5 +1,5 @@
 {
-    "aws_access_key_id":"AKIAZQXRD5PP3XGJVIPZ",
-    "aws_secret_access_key":"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",
+    "access_key":"AKIAZQXRD5PP3XGJVIPZ",
+    "secret_key":"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",
     "region": "us-east-1"
 }
