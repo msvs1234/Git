@@ -1,7 +1,7 @@
 terraform {
 backend "s3" {
-bucket = "gitbucket007"
-key = "gitbucket007.tfstate"
+bucket = "git2bucket"
+key = "git2bucket.tfstate"
 region = "us-east-1"
 }
 }
