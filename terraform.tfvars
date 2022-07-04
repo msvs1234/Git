@@ -1,0 +1,5 @@
+ vpc_cidr = "10.60.0.0/16"
+ vpc_name = "AWS_VPC"
+ vpc_igw = "AWS_IGW"
+ vpc_purt = "Public-RT"
+ vpc_pvrt = "Private-RT"

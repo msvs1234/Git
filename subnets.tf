@@ -1,30 +1,21 @@
-resource "aws_subnet" "subnet1-public" {
-    vpc_id = "${aws_vpc.default.id}"
-    cidr_block = "10.90.1.0/24"
-    availability_zone = "us-east-1a"
+resource "aws_subnet" "aws_publicsubnets" {
+  count = 3
+  vpc_id     = "${aws_vpc.myvpc.id}"
+   availability_zone = "${element(var.public_subnets, count.index)}"
+   cidr_block = "${element(var.public_cidr, count.index)}"
 
-    tags = {
-        Name = "Subnet-1"
-    }
+  tags = {
+    Name = "public-subnet-${count.index+1}"
+  }
 }
 
-resource "aws_subnet" "subnet2-public" {
-    vpc_id = "${aws_vpc.default.id}"
-    cidr_block = "10.90.2.0/24"
-    availability_zone = "us-east-1b"
+resource "aws_subnet" "aws_privatesubnets" {
+  count = 3
+  vpc_id     = "${aws_vpc.myvpc.id}"
+   availability_zone = "${element(var.private_subnets, count.index)}"
+   cidr_block = "${element(var.private_cidr, count.index)}"
 
-    tags = {
-        Name = "Subnet-2"
-    }
-}
-
-resource "aws_subnet" "subnet3-public" {
-    vpc_id = "${aws_vpc.default.id}"
-    cidr_block = "10.90.3.0/24"
-    availability_zone = "us-east-1c"
-
-    tags = {
-        Name = "Subnet-3"
-    }
-	
+  tags = {
+    Name = "private-subnet-${count.index+1}"
+  }
 }
